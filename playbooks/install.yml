@@ -50,5 +50,11 @@
       include: java.yml
       become: true
 
+    - name: Node.js is installed
+      shell: scripts/install-nodejs.sh
+
+    - name: Telegram is installed
+      shell: scripts/install-telegram.sh
+
     - name: PhpStorm is installed
       shell: scripts/install-phpstorm.sh
