@@ -1,0 +1,7 @@
+---
+# http://askubuntu.com/a/510186
+
+- apt_key: url='https://dl-ssl.google.com/linux/linux_signing_key.pub'
+- apt_repository: repo='deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main'
+- apt: name='google-chrome-stable'
+- shell: "exo-desktop-item-edit --create-new --type Application --name "Google Chrome" --command "/usr/bin/google-chrome-stable %U" --icon "google-chrome" $HOME/Desktop/"
