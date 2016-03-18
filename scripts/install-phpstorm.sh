@@ -10,18 +10,19 @@ DROPBOX_PATH="$HOME/Dropbox"
 INSTALL_PATH="$HOME/PhpStorm"
 TEMP_PATH="$HOME/.tmp"
 EXECUTABLE_PATH="$INSTALL_PATH/bin/phpstorm.sh"
+DOWNLOAD_URL="https://download.jetbrains.com/webide/PhpStorm-2016.1.tar.gz"
 
 # Installing the application
 rm -Rf $INSTALL_PATH
 rm -Rf $TEMP_PATH
 mkdir -p $TEMP_PATH
-wget -O - "https://download.jetbrains.com/webide/PhpStorm-10.0.3.tar.gz" | tar xzf - -C $TEMP_PATH
+wget -O - $DOWNLOAD_URL | tar xzf - -C $TEMP_PATH
 mv $TEMP_PATH/PhpStorm-* $INSTALL_PATH
 rm -Rf $TEMP_PATH
 
 # Creating a symlink for user settings directory
 # stored in DropBox
-files=($DROPBOX_PATH/.WebIde*)
+files=($DROPBOX_PATH/.PhpStorm*)
 for file in "${files[@]}" ; do
     ln -s $file $HOME/ || true
 done
