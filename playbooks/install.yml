@@ -13,8 +13,10 @@
       become: true
 
     - name: Google Chrome is installed
-      include: google-chrome.yml
+      shell: scripts/install-chrome.sh
       become: true
+      args:
+        creates: /usr/bin/google-chrome
 
     - name: Dropbox installed
       shell: nohup scripts/install-dropbox.sh &
@@ -49,12 +51,3 @@
     - name: Java is installed
       include: java.yml
       become: true
-
-    - name: Node.js is installed
-      shell: scripts/install-nodejs.sh
-
-    - name: Telegram is installed
-      shell: scripts/install-telegram.sh
-
-    - name: PhpStorm is installed
-      shell: scripts/install-phpstorm.sh

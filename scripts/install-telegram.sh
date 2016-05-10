@@ -1,8 +1,6 @@
 #/usr/bin/env bash
 
 set -o errexit
-set -o pipefail
-shopt -s nullglob
 
 INSTALL_PATH="$HOME/Telegram"
 TEMP_PATH="$HOME/.tmp"
@@ -24,4 +22,4 @@ exo-desktop-item-edit --create-new \
 --name Telegram \
 --command "$INSTALL_PATH/Telegram -- %u" \
 --icon telegram \
-$HOME/Desktop/
+$HOME/Desktop/ 2>&1 &

@@ -3,8 +3,6 @@
 # @todo: load URL from here: https://data.services.jetbrains.com/products/releases?code=PS&latest=true&type=release
 
 set -o errexit
-set -o pipefail
-shopt -s nullglob
 
 DROPBOX_PATH="$HOME/Dropbox"
 INSTALL_PATH="$HOME/PhpStorm"
@@ -36,4 +34,4 @@ exo-desktop-item-edit --create-new \
 --name PhpStorm \
 --command $EXECUTABLE_PATH \
 --icon "$INSTALL_PATH/bin/webide.png" \
-$HOME/Desktop/
+$HOME/Desktop/ 2>&1 &
