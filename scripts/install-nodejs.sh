@@ -2,9 +2,9 @@
 
 set -o errexit
 
-NODE_VERSION="v5"
+NODE_VERSION="v6"
 
-wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
+wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.31.6/install.sh | bash
 . $HOME/.nvm/nvm.sh
 
 cd "$NVM_DIR" && git pull origin master && git checkout `git describe --abbrev=0 --tags`
